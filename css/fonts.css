@@ -1,0 +1,58 @@
+/**
+    Beaufort for LOL font.
+    Source: https://www.fontget.com/font/beaufort-for-lol/
+ */
+
+@font-face {
+    font-family: 'Beaufort';
+    font-weight: 300;
+    font-style: normal;
+    src: url("../fonts/Beaufort/BeaufortforLOL-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Beaufort';
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/Beaufort/BeaufortforLOL-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Beaufort';
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/Beaufort/BeaufortforLOL-Bold.ttf") format("truetype");
+}
+
+/**
+    MarkPro.
+    Source: https://dwl.freefontsfamily.com/download/ff-mark-font/
+ */
+
+@font-face {
+    font-family: 'FF Mark';
+    font-weight: 300;
+    font-style: normal;
+    src: url("../fonts/MarkPro/MarkPro-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'FF Mark';
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/MarkPro/MarkPro.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'FF Mark';
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/MarkPro/MarkPro-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'FF Mark';
+    font-weight: 700;
+    font-style: italic;
+    src: url("../fonts/MarkPro/MarkPro-BoldItalic.otf") format("opentype");
+}

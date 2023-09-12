@@ -1,0 +1,155 @@
+@import 'reset.css';
+@import 'fonts.css';
+
+:root {
+    --header-background: #111;
+
+    --header-navitem-hover: #303030;
+    --header-navitem-underline: #0095B0;
+
+    --primary-button-background: #00BCDC;
+    --primary-button-color: #121212;
+
+    --secondary-button-background: #252525;
+    --secondary-button-color: #fff;
+}
+
+/**
+    Primary Configuration.
+ */
+
+html, body {
+    font-family: "FF Mark", Arial, Helvetica, sans-serif;
+    letter-spacing: .08em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Beaufort', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/**
+    Components.
+ */
+
+.plain-button--primary {
+    background-color: var(--primary-button-background);
+    color: var(--primary-button-color);
+    padding: 8px 1em;
+    font-weight: bold;
+    border-radius: 1em;
+    font-size: 0.8125rem;
+}
+
+.plain-button--secondary {
+    background-color: var(--secondary-button-background);
+    color: var(--secondary-button-color);
+    padding: 8px 1em;
+    font-weight: bold;
+    border-radius: .5em;
+    font-size: 0.8125rem;
+}
+
+/**
+    AppHeader.
+ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 36px;
+    border-bottom: 1px solid;
+    color: white;
+    background-color: var(--header-background);
+    font-size: 0.8125rem;
+}
+
+.riotgames-menu {
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    margin-right: 22px;
+}
+.riotgames-menu:hover svg {
+    color: #EC0027;
+}
+.riotgames-menu__logo {
+    color: white;
+}
+.riotgames-menu__arrow {
+    color: #7E7E7E;
+}
+
+header .logo {
+    display: flex;
+    max-height: 26px;
+}
+
+header .logo {
+    height: 100%;
+}
+
+header nav {
+    margin-right: auto;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 4px;
+    font-weight: bold;
+    margin: 7px 0;
+}
+
+header nav li {
+    position: relative;
+    cursor: pointer;
+    padding: .875rem 0;
+}
+
+header nav li p {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    padding: 8px 1em;
+    border-radius: .5em;
+}
+header nav li:hover p {
+    background-color: var(--header-navitem-hover);
+}
+
+/* Nav item underline */
+header nav li:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .25rem;
+    border-radius: 2rem;
+    background-color: var(--header-navitem-underline);
+    visibility: hidden;
+}
+
+header nav li:hover:after {
+    visibility: visible;
+}
+
+header .sign-in {
+    margin-right: 10px;
+}
+
+
