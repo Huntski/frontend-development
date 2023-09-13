@@ -56,3 +56,26 @@
     font-style: italic;
     src: url("../fonts/MarkPro/MarkPro-BoldItalic.otf") format("opentype");
 }
+
+/**
+    Spiegel Sans.
+    Source: https://befonts.com/spiegel-sans-font-family.html
+ */
+
+@font-face {
+    font-family: Spiegel;
+    font-weight: 300;
+    src: url("../fonts/SpiegelSans/SpiegelSans-3Light_TRIAL.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Spiegel;
+    font-weight: 400;
+    src: url("../fonts/SpiegelSans/SpiegelSans-5Regular_TRIAL.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Spiegel;
+    font-weight: 700;
+    src: url("../fonts/SpiegelSans/SpiegelSans-7Bold_TRIAL.otf") format("opentype");
+}

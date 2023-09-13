@@ -8,6 +8,7 @@
     --header-navitem-underline: #0095B0;
 
     --primary-button-background: #00BCDC;
+    --primary-button-hover-background: #5AC3DF;
     --primary-button-color: #121212;
 
     --secondary-button-background: #252525;
@@ -21,6 +22,7 @@
 html, body {
     font-family: "FF Mark", Arial, Helvetica, sans-serif;
     letter-spacing: .08em;
+    margin-top: 80px;
 }
 
 a {
@@ -35,6 +37,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 button {
+    display: grid;
+    place-items: center;
     cursor: pointer;
     text-transform: uppercase;
 }
@@ -43,22 +47,69 @@ button {
     Components.
  */
 
-.plain-button--primary {
-    background-color: var(--primary-button-background);
-    color: var(--primary-button-color);
-    padding: 8px 1em;
-    font-weight: bold;
-    border-radius: 1em;
-    font-size: 0.8125rem;
-}
-
-.plain-button--secondary {
+.plain-button {
+    display: grid;
+    place-items: center;
     background-color: var(--secondary-button-background);
     color: var(--secondary-button-color);
-    padding: 8px 1em;
+    padding: 0 1em;
     font-weight: bold;
     border-radius: .5em;
     font-size: 0.8125rem;
+    height: 32px;
+}
+
+.plain-button--primary {
+    background-color: var(--primary-button-background);
+    color: var(--primary-button-color);
+    border-radius: 1em;
+}
+
+.plain-button--square {
+    background-color: transparent;
+    padding: 0;
+    aspect-ratio: 1 / 1;
+}
+.plain-button--square:hover,
+.plain-button--square:focus {
+    background-color: var(--secondary-button-background);
+}
+
+.plain-button--circle {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.outline-button {
+    position: relative;
+    box-sizing: border-box;
+    /*height: 56px;*/
+    font-family: "FF Mark", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    font-size: 0.8125rem;
+    padding: .5em;
+    transition: background 1000ms;
+}
+
+.outline-button:hover p {
+    background-color: var(--primary-button-hover-background);
+}
+
+.outline-button p {
+    padding: 2rem 4rem;
+    background-color: var(--primary-button-background);
+    color: var(--primary-button-color);
+    transition: background 300ms;
+}
+
+.outline-button canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /**
@@ -66,14 +117,18 @@ button {
  */
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 36px;
-    border-bottom: 1px solid;
     color: white;
     background-color: var(--header-background);
     font-size: 0.8125rem;
+    min-height: 80px;
 }
 
 .riotgames-menu {
@@ -92,13 +147,30 @@ header {
     color: #7E7E7E;
 }
 
-header .logo {
+.league-logo {
     display: flex;
-    max-height: 26px;
+    min-height: 26px;
+    margin-right: 20px;
 }
 
-header .logo {
-    height: 100%;
+.league-logo svg:first-child {
+    display: block;
+}
+.league-logo svg:last-child {
+    display: none;
+}
+
+@media screen and (max-width: 1025px) {
+    .league-logo svg:first-child {
+        display: none;
+    }
+    .league-logo svg:last-child {
+        display: block;
+    }
+
+    header nav li {
+        display: none;
+    }
 }
 
 header nav {
@@ -148,8 +220,73 @@ header nav li:hover:after {
     visibility: visible;
 }
 
-header .sign-in {
-    margin-right: 10px;
+/* Secondary Navigation */
+
+.secondary-navigation {
+    display: flex;
+    place-items: center;
 }
 
+.sign-in {
+    margin-left: .2em;
+    margin-right: 1em;
+}
 
+.search-button {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    padding: 8px 1em;
+    height: auto;
+}
+
+.search-button svg {
+    width: 22px;
+    color: white;
+}
+
+/**
+    Hero Section.
+ */
+
+.hero {
+    padding: 0 3.75rem 3.75rem 3.75rem;
+    height: 55vh;
+    /*background: green;*/
+}
+
+.hero__blurred-video {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55vh;
+    object-fit: cover;
+}
+
+.hero-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 3.75rem;
+    max-height: 31.25rem;
+    /*overflow: hidden;*/
+}
+
+.hero-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-wrapper img {
+    max-height: 16.5312rem;
+}
