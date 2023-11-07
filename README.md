@@ -73,11 +73,11 @@ ook alle fonts gevonden die de League of Legends site gebruikt.
 
 ### 💻 **Desktop Versie:**
 
-![](../../Downloads/Screenshot 2023-09-14 at 08.27.27.png)
+![](img/markdown/Screenshot 2023-09-14 at 08.27.27.png)
 
 ### 📱 **Tablet Versie:**
 
-![](../../Downloads/find.png)
+![](img/markdown/find.png)
 
 ## 🔖 Bevindingen Screenreader
 
@@ -92,9 +92,9 @@ ook alle fonts gevonden die de League of Legends site gebruikt.
 
 ## 🙈 Bevindingen Visuele handicap
 
-<img src="../../Downloads/Screenshot 2023-09-06 at 20.14.35.png" width="300">
-<img src="../../Downloads/Screenshot 2023-09-06 at 20.04.11.png" height="160">
-<img src="../../Downloads/Screenshot 2023-09-06 at 20.04.11.png" height="160">
+<img src="img/markdown/Screenshot 2023-09-06 at 20.14.35.png" width="300">
+<img src="img/markdown/Screenshot 2023-09-06 at 20.04.11.png" height="160">
+<img src="img/markdown/Screenshot 2023-09-06 at 20.04.24.png" height="160">
 
 - Grotere en dikkere teksten helpen erg bij slechtziende.
 - Wanneer je problemen hebt met contrast zien tussen elementen, merk je erg snel dat lichtere teksten en foto’s of
@@ -113,9 +113,9 @@ kleur niet hetzelfde is bij mensen die kleurenblind zijn.
 - Hero section gemaakt met live video.
 - Begin Footer uitgewerkt.
 
-![](../../Desktop/Screenshots/Screenshot 2023-09-12 at 17.16.39.png)
+![](img/markdown/Screenshots/Screenshot 2023-09-12 at 17.16.39.png)
 
-![](../../Desktop/Screenshot 2023-11-06 at 17.21.12.png)
+![](img/markdown/Screenshot 2023-11-06 at 17.21.12.png)
 
 ---
 
@@ -135,7 +135,7 @@ Mijn eigen oplossing om dit te maken was om met het gebruik van lijnen binnen de
 laden, en deze dan te animeren door de lijnen een veranderende offset te geven waardoor het lijkt alsof de randen
 smaller worden.
 
-<img src="../../Downloads/offset2.png" height="225"> <img src="../../Desktop/Screenshot 2023-11-07 at 00.11.12.png" height="225"> 
+<img src="img/markdown/offset2.png" height="225"> <img src="img/markdown/Screenshot 2023-11-07 at 00.11.12.png" height="225"> 
 
 Andere soorten borders maken, zoals op de League of Legends website, via deze manier is hierdoor erg makkelijk, maar ik
 moet wel elke keer specifiek aangeven hoe het eruit moet zien.
@@ -169,7 +169,7 @@ verlies. Omdat wij nog erg weinig tijd hebben ga ik proberen hier mogelijk aan t
 - Champion Rol Selector gemaakt.
 
 ### ⚔️ Fix borders niet correct renderen.
-<img src="../../Desktop/Screenshots/Screenshot 2023-09-25 at 19.01.16.png" height="350">
+<img src="img/markdown/Screenshots/Screenshot 2023-09-25 at 19.01.16.png" height="350">
 
 Een probleem bij het genereren van de canvases voor de borders rond de buttons, was dat de width niet correct werd aangepast nadat het in geladen was. Hierdoor leken de lijnen van borders ontzettend wazig. Dit heb ik besproken met mijn docent tijdens het feedbackgesprek deze week en kwam deze makkelijke oplossing uit.
 ```javascript
@@ -229,7 +229,7 @@ function selectRole(key) {
 
 De knoppen voor mobile en desktop zijn apart gemaakt, maar worden wel beide geselecteerd omdat dezelfde data-set waarde er aan vast zit.
 
-<img src="../../Desktop/MobileChampionSelect.png" height="350"> <img src="../../Desktop/Screenshot 2023-11-06 at 15.37.28.png" height="350">
+<img src="img/markdown/MobileChampionSelect.png" height="350"> <img src="img/markdown/Screenshot 2023-11-06 at 15.37.28.png" height="350">
 
 Op de echte website word erg veel met extra elementen en negatieve margins gewerkt om alles op zijn plaats te zetten. Zelf is bij het namaken hiervan gelukt om dit deels te vermijden door de HTML wat beter te structureren.
 
@@ -253,6 +253,6 @@ Deze aanpassingen heb ik maandag gemaakt voor de deadline voor het gesprek.
 - Footer afgemaakt.
 - Styling van de artikelen aangepast.
 
-<img src="../../Desktop/Screenshot 2023-11-07 at 02.03.07.png" height="170">
-<img src="../../Desktop/Screenshot 2023-11-07 at 02.02.24.png" height="170">
+<img src="img/markdown/Screenshot 2023-11-07 at 02.03.07.png" height="170">
+<img src="img/markdown/Screenshot 2023-11-07 at 02.02.24.png" height="170">
 
