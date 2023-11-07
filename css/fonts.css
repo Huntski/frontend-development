@@ -24,6 +24,13 @@
     src: url("../fonts/Beaufort/BeaufortforLOL-Bold.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: 'Beaufort';
+    font-weight: 900;
+    font-style: normal;
+    src: url("../fonts/Beaufort/BeaufortforLOL-Heavy.ttf") format("truetype");
+}
+
 /**
     MarkPro.
     Source: https://dwl.freefontsfamily.com/download/ff-mark-font/

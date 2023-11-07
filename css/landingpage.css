@@ -1,0 +1,470 @@
+/** =============
+    Hero Section
+ ================ */
+
+.hero {
+    position: relative;
+    height: 700px;
+    background: #07121A;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.hero__blurred-video {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 3.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    background: #07121A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 105rem;
+    height: 55vh;
+    min-height: 31.25rem;
+}
+
+.hero-content video {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content img {
+    max-height: 13.5312rem;
+}
+
+/** =============
+    Featured Articles
+ ================ */
+
+.featured-news {
+    position: relative;
+    padding: 120px 3.75rem 5em 3.75rem;
+    margin-top: -150px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAGQCAIAAABnC3SKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkY4MzcxNUYxQTc1NzExRTk5MEJGRDA2QkQ5MkE0QTVGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkY4MzcxNUYyQTc1NzExRTk5MEJGRDA2QkQ5MkE0QTVGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjgzNzE1RUZBNzU3MTFFOTkwQkZEMDZCRDkyQTRBNUYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjgzNzE1RjBBNzU3MTFFOTkwQkZEMDZCRDkyQTRBNUYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5246U/AAAGtklEQVR42uyb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) left top repeat-x rgb(247, 247, 247);
+}
+
+.featured-news h2 {
+    position: absolute;
+    font-family: "Beaufort", sans-serif;
+    font-size: .9em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    color: rgb(188, 188, 188);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    opacity: 0;
+}
+
+.featured-news__articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.news-item {
+    display: flex;
+    box-sizing: border-box;
+    height: 180px;
+    gap: 1em;
+    background: linear-gradient(to bottom, #ffffff00, #fff 20%);
+    font-family: "FF Mark", sans-serif;
+    cursor: pointer;
+}
+
+.news-item__image {
+    width: 200px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.news-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 200ms ease-in;
+}
+.news-item:focus img,
+.news-item:hover img {
+    transform: scale(1.1);
+}
+
+.news-item__content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-right: 1.5em;
+    box-sizing: border-box;
+}
+
+.news-item span {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.news-item h3 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.news-item p {
+    font-size: .7em;
+    text-overflow: ellipsis;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.featured-news button {
+    margin-left: auto;
+    font-size: .7em;
+    font-weight: 500;
+    padding: 2em 0;
+}
+
+@media screen and (max-width: 1025px) {
+    .featured-news {
+        padding: 4em 0;
+    }
+
+    .featured-news__articles {
+        overflow-x: auto;
+        margin-left: 10px;
+        padding-right: 1em;
+    }
+
+    .news-item {
+        width: 20rem;
+    }
+}
+
+/** =============
+    Choose Your Champion - Section
+ ================ */
+
+.champions {
+    padding-top: 50px;
+    margin: 0 60px;
+}
+
+.champions__headline {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+}
+
+.champions__headline h1 {
+    font-family: "Beaufort", sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.champions__headline h1 strong {
+    display: block;
+    font-size: 6.2rem;
+    line-height: .7;
+    padding: 0 15px 10px;
+    font-weight: 900;
+}
+
+.champions__headline p {
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+    padding: 0 10%;
+    margin: 12px auto 0;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+    transition: opacity 500ms ease-out 400ms;
+    opacity: 1;
+    box-sizing: content-box;
+}
+
+.champions__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 0.9375rem;
+}
+
+/**
+    Champion Roles List
+ */
+
+.champion-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-left: -60px;
+    margin-top: -5em;
+    padding-bottom: 10em;
+}
+
+.roles--desktop {
+    display: none;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    max-width: 50vw;
+    transform: translateY(12%);
+}
+
+.roles--desktop__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 564px;
+    margin: 0 auto;
+}
+
+.roles--desktop__video {
+    width: 100%;
+    margin-top: 5rem;
+}
+.roles--desktop__video video {
+    width: 100%;
+    height: 80%;
+
+    object-fit: cover;
+}
+
+.roles--desktop__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 564px;
+    margin: 0 auto;
+}
+.roles--desktop__buttons:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 26.6%;
+    height: 1px;
+    background: rgb(193, 193, 193);
+}
+
+.roles--mobile {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    width: 100%;
+    margin-top: 2em;
+    border-top: 1px solid rgb(193, 193, 193);
+    border-bottom: 1px solid rgb(193, 193, 193);
+}
+
+.roles--mobile .role-option {
+    padding: 16px 12px;
+}
+.roles--mobile .role-option:after {
+    display: none;
+}
+
+@media screen and (max-width: 1025px) {
+    .champion-selection {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Role option icon */
+
+.role-option {
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 16px 12px 40px 12px;
+    color: rgb(186, 194, 204);
+    fill: rgb(186, 194, 204);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    transition: color 600ms ease 0s;
+}
+.role-option:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgb(186, 194, 204);
+    transition: opacity 600ms ease 0s;
+}
+
+.role-option:hover,
+.role-option:focus,
+.role-option.is-active {
+    color: rgb(1, 1, 1);
+}
+
+.role-option__icon {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 0 auto 10px;
+}
+
+.role-option__icon span {
+    aspect-ratio: 1 / 1;
+}
+
+.role-option__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    fill: #BD8634;
+    opacity: 0;
+    transition: opacity 200ms ease 0s;
+}
+
+.role-option__content {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    width: 30px;
+    will-change: transform;
+    transform-origin: center bottom;
+    transform: translateY(15px) scale(0.75, 0.75);
+    transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0s, fill 0.2s ease-in-out 0s;
+}
+
+/* Selected Role Option */
+.role-option.is-active .role-option__border {
+    opacity: 1;
+}
+
+.role-option:hover .role-option__content,
+.role-option:focus .role-option__content,
+.role-option.is-active .role-option__content {
+    fill: rgb(1, 1, 1);
+    transform: translateY(5px) scale(1, 1);
+}
+
+.role-option.is-active:after {
+    opacity: 0;
+}
+
+/* Selected Role (Image of the champion.) */
+
+.selected-role {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    margin: 25px auto 0;
+    padding: 0 20px;
+    transform: translateX(-2.9%);
+}
+
+.selected-role__image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.selected-role__outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: rotate 6s linear infinite;
+}
+
+.selected-role__title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.625rem;
+}
+
+.selected-role__title strong {
+    display: block;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 1025px) {
+    .roles--mobile {
+        display: none;
+    }
+
+    .roles--desktop {
+        display: block;
+    }
+
+    .selected-role {
+        max-width: 95%;
+    }
+}
+
+/** =============
+    Play for Free
+ ================ */
+
+.play-for-free {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    max-height: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-for-free video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

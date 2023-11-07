@@ -1,5 +1,11 @@
+/**
+    I've used a CSS naming convention called BEM to name my classes.
+    https://webflow.com/blog/class-naming-101-bem
+ */
+
 @import 'reset.css';
 @import 'fonts.css';
+@import 'components.css';
 
 :root {
     --header-background: #111;
@@ -7,22 +13,17 @@
     --header-navitem-hover: #303030;
     --header-navitem-underline: #0095B0;
 
-    --primary-button-background: #00BCDC;
-    --primary-button-hover-background: #5AC3DF;
-    --primary-button-color: #121212;
-
-    --secondary-button-background: #252525;
-    --secondary-button-color: #fff;
+    --article-label: #BCBCBC;
 }
 
-/**
-    Primary Configuration.
- */
+/** =============
+    General Configuration
+ ================ */
 
 html, body {
     font-family: "FF Mark", Arial, Helvetica, sans-serif;
     letter-spacing: .08em;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 a {
@@ -36,97 +37,30 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-button {
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    text-transform: uppercase;
+h2 {
+    font-size: 14px;
 }
 
-/**
-    Components.
- */
-
-.plain-button {
-    display: grid;
-    place-items: center;
-    background-color: var(--secondary-button-background);
-    color: var(--secondary-button-color);
-    padding: 0 1em;
-    font-weight: bold;
-    border-radius: .5em;
-    font-size: 0.8125rem;
-    height: 32px;
+p {
+    font-size: 12px;
 }
 
-.plain-button--primary {
-    background-color: var(--primary-button-background);
-    color: var(--primary-button-color);
-    border-radius: 1em;
-}
-
-.plain-button--square {
-    background-color: transparent;
-    padding: 0;
-    aspect-ratio: 1 / 1;
-}
-.plain-button--square:hover,
-.plain-button--square:focus {
-    background-color: var(--secondary-button-background);
-}
-
-.plain-button--circle {
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    padding: 0;
-}
-
-.outline-button {
-    position: relative;
-    box-sizing: border-box;
-    /*height: 56px;*/
-    font-family: "FF Mark", Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-    font-size: 0.8125rem;
-    padding: .5em;
-    transition: background 1000ms;
-}
-
-.outline-button:hover p {
-    background-color: var(--primary-button-hover-background);
-}
-
-.outline-button p {
-    padding: 2rem 4rem;
-    background-color: var(--primary-button-background);
-    color: var(--primary-button-color);
-    transition: background 300ms;
-}
-
-.outline-button canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/**
-    AppHeader.
- */
+/** =============
+    App Header
+ ================ */
 
 header {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 4;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 36px;
     color: white;
-    background-color: var(--header-background);
+    background: var(--header-background);
     font-size: 0.8125rem;
     min-height: 80px;
 }
@@ -160,6 +94,7 @@ header {
     display: none;
 }
 
+/* @ Will change displayed league logo based on mobile or desktop. */
 @media screen and (max-width: 1025px) {
     .league-logo svg:first-child {
         display: none;
@@ -200,7 +135,7 @@ header nav li p {
     border-radius: .5em;
 }
 header nav li:hover p {
-    background-color: var(--header-navitem-hover);
+    background: var(--header-navitem-hover);
 }
 
 /* Nav item underline */
@@ -212,7 +147,7 @@ header nav li:after {
     width: 100%;
     height: .25rem;
     border-radius: 2rem;
-    background-color: var(--header-navitem-underline);
+    background: var(--header-navitem-underline);
     visibility: hidden;
 }
 
@@ -221,7 +156,6 @@ header nav li:hover:after {
 }
 
 /* Secondary Navigation */
-
 .secondary-navigation {
     display: flex;
     place-items: center;
@@ -246,47 +180,193 @@ header nav li:hover:after {
     color: white;
 }
 
-/**
-    Hero Section.
- */
+/** =============
+    Footer
+ ================ */
 
-.hero {
-    padding: 0 3.75rem 3.75rem 3.75rem;
-    height: 55vh;
-    /*background: green;*/
+footer {
+    background-color: #111;
+    padding: 0px 0px 48px 0px;
+    border-top: 2px solid #343434;
 }
 
-.hero__blurred-video {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 55vh;
-    object-fit: cover;
-}
-
-.hero-wrapper {
-    position: relative;
+/*
+    List type used twice within Footer Element
+*/
+.footer-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    padding: 10rem 3.75rem;
-    max-height: 31.25rem;
-    /*overflow: hidden;*/
+    align-items: center;
+    padding: 24px 0px 28px;
+}
+.footer-list li {
+    cursor: pointer;
+    padding: 8px 16px;
+    color: #f9f9f9;
+    text-transform: uppercase;
+    font-family: "FF Mark", sans-serif;
+    font-weight: bold;
+    font-size: 0.81em;
+    border-radius: .5em;
+    transition: all .2s linear;
+}
+.footer-list li:hover {
+    background: #444444;
+}
+@media (max-width: 1024px) {
+    .footer-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
 }
 
-.hero-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+/* App store section */
+.app-store {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #061C25;
+    color: #D1DADD;
+    padding: 20px 60px;
+}
+
+.app-store h2 {
+    text-transform: uppercase;
+    min-width: 300px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.app-store p {
+    text-align: center;
+    flex: 1 1 auto;
+    font-size: .75em;
+    letter-spacing: 0.08em;
+}
+
+.app-store__badges {
+    display: flex;
+    justify-content: end;
+    gap: .7em;
+    min-width: 300px;
+}
+.app-store__badges a {
+    height: 36px;
+}
+
+.app-store__badges img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
-.hero-wrapper img {
-    max-height: 16.5312rem;
+@media screen and (max-width: 1025px) {
+    .app-store {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        gap: 1em;
+    }
 }
+
+/* Footer links */
+.footer-links {
+    background: #292929;
+    color: #EFEFEF;
+}
+
+/* Footer Socials */
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.socials li {
+    display: grid;
+    place-items: center;
+    margin: 6px;
+    background: rgba(128,128,128,.2);
+    border-radius: 12px;
+    width: 32px;
+    height: 32px;
+}
+
+.socials svg {
+    width: 16px;
+    height: 16px;
+    fill: #f9f9f9;
+    fill-rule: evenodd;
+}
+
+/* Footer Logo & Copyrights */
+
+.logo {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 24px 0px 20px;
+}
+
+.logo svg {
+    fill: #737373;
+}
+
+.copyrights {
+    font-family: "FF Mark W05",Arial,sans-serif;
+    margin: 0 auto;
+    max-width: 640px;
+    font-weight: 500;
+    font-size: 0.75em;
+    line-height: 140%;
+    text-align: center;
+    word-break: keep-all;
+    color: #7e7e7e;
+}
+
+/* Pegi Icons */
+
+.pegi {
+    display: flex;
+    justify-content: center;
+}
+
+.pegi img {
+    padding: 8px 12px;
+    background: #292929;
+    border-radius: 8px;
+}
+
+/** =============
+    Keyframes
+ ================ */
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0%, 20% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
